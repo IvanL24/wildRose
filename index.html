@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Wild Rose Country Finance</title>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="img/logo.png" alt="">
+        </figure>
+        <div class="tagline">
+            <h1>Wild Rose Country Finance</h1>
+        <p>Your most trusted finance company</p>
+        </div>
+    </header>
+    <form id="form" name="form" onsubmit="addToArray();return false">
+        <fieldset>
+            <div class="info">
+                <p>
+                    <label for="current_date">Current Date</label>
+                    <input type="date" name="date" id="current_date">
+                </p>
+                <p>
+                    <label for="fname">First Name</label>
+                    <input type="text" name="firstname" id="fname" pattern="[A-Za-z]{1,15}" required="true">
+                </p>
+                <p>
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="laslname" id="lname" pattern="[A-Za-z]{1,15}" required="true">
+                </p>
+                <p>
+                    <label for="stAddress">Street Address</label>
+                    <input type="text" name="streetaddress" id="stAddress" required="true">
+                </p>
+                <p>
+                    <label for="postal">Postal Code</label>
+                    <input type="text" name="postalcode" id="postal" pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]">
+                </p>
+                <p>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" name="phone" id="phone">
+                </p>
+                <p>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </p>
+            </div>
+            <div class="btnGrp">
+                    <div class="client">
+                        <h4>Are you a current client?</h4>
+                        <input type="radio" name="current_clients" value="Yes">
+                        <label>Yes</label>
+                        <input type="radio" name="current_clients" value="No">
+                        <label>No</label>
+                    </div>
+                    <div class="gender">
+                        <h4>Please specify your gender: </h4>
+                        <input type="radio" name="gender" value="Male"> Male
+                        <input type="radio" name="gender" value="Female"> Female
+                        <input type="radio" name="gender" value="Other"> Other
+                    </div>
+                    <div class="age">
+                        <h4>please specify your age: <input type="number" name="age" id="age"></h4>
+                        
+                    </div>
+                    <div class="apt">
+                        <h4>Do you own or rent your home?</h4>
+                        <input type="radio" name="home" value="Owns"> Own
+                        <input type="radio" name="home" value="Rents"> Rent
+                    </div>
+                    <div class="income">
+                        <h4>Annual Gross Income: </h4>
+                        <input type="number" name="income" id="income" min="0" max="100000">
+                    </div>
+                    <div class="checkBox">
+                        <h4>Do you own one of the following:</h4>
+                        <input type="checkbox" name="checkbox" id="vehicle" value="Vehicle">Vehicle
+                        <input type="checkbox" name="checkbox" id="rrsp" value="RRSP">RRSP
+                        <input type="checkbox" name="checkbox" id="tfsa" value="TFSA">TFSA
+                        <input type="checkbox" name="checkbox" id="rrif" value="RRIF">RRIF
+                    </div>
+                    
+                    <div class="submit">
+                        <button type="submit" id="submit">Submit</button>
+                    </div>
+                </div>
+        </fieldset>
+    </form>
+    <div class="list">
+        <h2>List of customers</h2>
+        <p>select one of the customers to delete.</p>
+        <p class="item"><span id="customerList"></span></p>
+        <button type="button" value="delete" id="delete" disabled="true" onclick="deleteItem();return false">Delete</button>
+    </div>
+    
+    <footer>
+        &copy; Ivan Lavena. Wild Rose Country Finance. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
